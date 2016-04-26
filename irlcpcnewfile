@@ -1,0 +1,21 @@
+#IrlCPC 2016 : Problem 3
+
+powers = [ ]
+power5 = 5
+maxnum = 2 ** 31 -1
+while power5 <= maxnum :
+    powers += [ power5 ]
+    power5 *= 5
+
+T = int( input( ) )
+
+for _ in range( T ) :
+    n = int( input( ) )
+
+    z = 0
+    for power5 in powers :
+        if power5 <= n:
+            z += n // power5
+        else:
+            break
+    print( z )    
